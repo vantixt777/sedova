@@ -1,0 +1,1 @@
+pip3 install requests phonenumbers python-whois beautifulsoup4 colorama pystyle google exif hashlib
