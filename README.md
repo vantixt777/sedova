@@ -1,8 +1,4 @@
-(Due to technical issues, the search service is temporarily unavailable.)
-
-This script is a **multi-functional OSINT (Open Source Intelligence) toolkit** designed for gathering information from various online sources. It provides a wide range of functionalities, from IP and phone number lookup to website crawling and metadata extraction. Below is a detailed breakdown of what the script can do, the Python modules it uses, and how you can use it on **Kali Linux**.
-
----
+ ![Image Alt](https://github.com/vantixt777/sedova/blob/c4400cf625ef5fa2c5252acb943ab0006d3f4583/sedova.png)
 
 ## **What the Script Can Do**
 
