@@ -87,13 +87,13 @@ The script relies on the following Python modules:
 
 1. Save the script to a file, e.g., `osint_toolkit.py`:
    ```bash
-   nano osint_toolkit.py
+   nano Sedova.py
    ```
    Paste the script code into the file and save it (`Ctrl + O`, then `Ctrl + X`).
 
 2. Make the script executable:
    ```bash
-   chmod +x osint_toolkit.py
+   chmod +x Sedova.py
    ```
 
 ---
@@ -102,7 +102,7 @@ The script relies on the following Python modules:
 
 1. Run the script using Python:
    ```bash
-   python3 osint_toolkit.py
+   python3 Sedova.py
    ```
 
 2. Follow the menu prompts to select the desired functionality. For example:
