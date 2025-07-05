@@ -15,11 +15,11 @@ import hashlib
 import ssl
 import json
 
-# Initialize colors
+
 init(autoreset=True)
 red, green, yellow, reset = Fore.RED, Fore.GREEN, Fore.YELLOW, Fore.RESET
 
-# Display banner
+
 def print_banner():
     banner = Colorate.Horizontal(Colors.green_to_black, """
    ▄████████    ▄████████ ████████▄   ▄██████▄   ▄█    █▄     ▄████████ 
@@ -33,7 +33,7 @@ def print_banner():
 """)
     print(banner)
 
-# Display menu
+
 def print_menu():
     menu = Colorate.Horizontal(Colors.green_to_black, """
 ╔═════════════════════════════════════════════════════╗
@@ -59,7 +59,7 @@ def print_menu():
 """)
     print(menu)
 
-# Get IP information
+
 def get_ip_info(ip):
     try:
         response = requests.get(f"http://ip-api.com/json/{ip}")
@@ -74,7 +74,7 @@ def get_ip_info(ip):
     except Exception as e:
         print(f"{red}Error: {e}{reset}")
 
-# Get phone number information
+
 def get_phone_info(phone_number):
     try:
         parsed_number = phonenumbers.parse(phone_number)
@@ -85,7 +85,7 @@ def get_phone_info(phone_number):
     except Exception as e:
         print(f"{red}Error: {e}{reset}")
 
-# Scan ports with threading
+
 def scan_port(ip, port):
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     sock.settimeout(1)
@@ -110,7 +110,7 @@ def scan_ports(ip):
     except Exception as e:
         print(f"{red}Error: {e}{reset}")
 
-# Google Dorking
+
 def google_dorking():
     query = input("Enter your Google Dork query: ")
     try:
@@ -120,7 +120,7 @@ def google_dorking():
     except Exception as e:
         print(f"{red}Error: {e}{reset}")
 
-# Check breached data
+
 def breached_data_check():
     email = input("Enter email to check for breaches: ")
     api_key = "your_api_key_here"  # Replace with your API key
@@ -138,7 +138,7 @@ def breached_data_check():
     except Exception as e:
         print(f"{red}Error: {e}{reset}")
 
-# WHOIS Lookup
+
 def whois_lookup(domain):
     try:
         domain_info = whois.whois(domain)
@@ -151,7 +151,7 @@ def whois_lookup(domain):
     except Exception as e:
         print(f"{red}Error: {e}{reset}")
 
-# Subdomain Finder
+
 def subdomain_finder(domain):
     try:
         url = f"https://crt.sh/?q=%25.{domain}&output=json"
@@ -165,7 +165,7 @@ def subdomain_finder(domain):
     except Exception as e:
         print(f"{red}Error: {e}{reset}")
 
-# Reverse IP Lookup
+
 def reverse_ip_lookup(ip):
     try:
         response = requests.get(f"https://api.hackertarget.com/reverseiplookup/?q={ip}")
@@ -174,7 +174,7 @@ def reverse_ip_lookup(ip):
     except Exception as e:
         print(f"{red}Error: {e}{reset}")
 
-# Extract links from a website
+
 def extract_links(url):
     try:
         response = requests.get(url)
@@ -185,7 +185,7 @@ def extract_links(url):
     except Exception as e:
         print(f"{red}Error: {e}{reset}")
 
-# Extract metadata from files
+
 def extract_metadata(file):
     if not os.path.isfile(file):
         print(f"{red}Error: File not found!{reset}")
@@ -202,7 +202,7 @@ def extract_metadata(file):
     else:
         print(f"{red}Invalid file type. Supported: .jpg, .jpeg, .png{reset}")
 
-# Find admin panel
+
 def find_admin_panel(domain):
     try:
         admin_paths = ["admin", "login", "wp-admin", "dashboard"]
@@ -218,7 +218,7 @@ def find_admin_panel(domain):
     except Exception as e:
         print(f"{red}Error: {e}{reset}")
 
-# Username checker
+
 def username_checker(username):
     try:
         sites = {
@@ -241,7 +241,7 @@ def username_checker(username):
     except Exception as e:
         print(f"{red}Error: {e}{reset}")
 
-# DNS Lookup
+
 def dns_lookup(domain):
     try:
         response = requests.get(f"https://api.hackertarget.com/dnslookup/?q={domain}")
@@ -250,7 +250,7 @@ def dns_lookup(domain):
     except Exception as e:
         print(f"{red}Error: {e}{reset}")
 
-# DNS History Check
+
 def dns_history_check(domain):
     try:
         print(f"{green}Fetching DNS history for {domain}...{reset}")
@@ -264,7 +264,7 @@ def dns_history_check(domain):
     except Exception as e:
         print(f"{red}Error: {e}{reset}")
 
-# Social Media Lookup
+
 def social_media_lookup(username):
     try:
         sites = {
@@ -287,7 +287,7 @@ def social_media_lookup(username):
     except Exception as e:
         print(f"{red}Error: {e}{reset}")
 
-# Username Availability Checker
+
 def username_availability(username):
     try:
         sites = {
@@ -310,7 +310,7 @@ def username_availability(username):
     except Exception as e:
         print(f"{red}Error: {e}{reset}")
 
-# Email Header Analyzer
+
 def email_header_analyzer():
     try:
         header = input("Paste the email header here: ")
@@ -335,7 +335,7 @@ def email_header_analyzer():
     except Exception as e:
         print(f"{red}Error: {e}{reset}")
 
-# IP Blacklist Check
+
 def ip_blacklist_check(ip):
     try:
         print(f"{green}Checking if {ip} is blacklisted...{reset}")
@@ -354,7 +354,7 @@ def ip_blacklist_check(ip):
     except Exception as e:
         print(f"{red}Error: {e}{reset}")
 
-# File Metadata Extractor
+
 def file_metadata_extractor(file):
     if not os.path.isfile(file):
         print(f"{red}Error: File not found!{reset}")
@@ -372,14 +372,14 @@ def file_metadata_extractor(file):
     else:
         print(f"{red}Invalid file type. Supported: .jpg, .jpeg, .png{reset}")
 
-# Website Tech Stack
+
 def website_tech_stack(url):
     try:
         print(f"{green}Fetching tech stack for {url}...{reset}")
         response = requests.get(url)
         soup = BeautifulSoup(response.text, 'html.parser')
         print(f"{green}Tech Stack:{reset}")
-        # Check for common technologies
+        
         if "wp-content" in response.text:
             print("WordPress")
         if "react" in response.text.lower():
@@ -393,7 +393,7 @@ def website_tech_stack(url):
     except Exception as e:
         print(f"{red}Error: {e}{reset}")
 
-# SSL Certificate Info
+
 def ssl_certificate_info(domain):
     try:
         print(f"{green}Fetching SSL certificate info for {domain}...{reset}")
@@ -406,7 +406,7 @@ def ssl_certificate_info(domain):
     except Exception as e:
         print(f"{red}Error: {e}{reset}")
 
-# Dark Web Search
+
 def dark_web_search(query):
     try:
         print(f"{green}Searching the dark web for '{query}'...{reset}")
@@ -419,7 +419,7 @@ def dark_web_search(query):
     except Exception as e:
         print(f"{red}Error: {e}{reset}")
 
-# Main menu
+
 def main():
     print_banner()
     while True:
